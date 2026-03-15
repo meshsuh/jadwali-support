@@ -74,6 +74,21 @@ body.ar .t-ar{display:block}body.en .t-en{display:block}
 span.t-ar{display:none}span.t-en{display:none}
 body.ar span.t-ar{display:inline}body.en span.t-en{display:inline}
 </style>
+<script>
+function showTab(tab, btn) {
+  document.querySelectorAll('.section').forEach(function(s){ s.classList.remove('active'); });
+  document.querySelectorAll('nav .nav-btn').forEach(function(b){ b.classList.remove('active'); });
+  document.getElementById('tab-' + tab).classList.add('active');
+  if (btn) btn.classList.add('active');
+}
+function setLang(lang) {
+  document.body.className = lang;
+  document.body.setAttribute('lang', lang);
+  document.body.setAttribute('dir', lang === 'ar' ? 'rtl' : 'ltr');
+  document.getElementById('btn-ar').classList.toggle('active', lang === 'ar');
+  document.getElementById('btn-en').classList.toggle('active', lang === 'en');
+}
+</script>
 </head>
 <body class="en">
 
