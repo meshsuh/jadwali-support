@@ -1,302 +1,297 @@
 <!DOCTYPE html>
-<html lang="ar" dir="rtl">
+<html lang="en" dir="ltr">
 <head>
 <meta charset="UTF-8">
 <meta name="viewport" content="width=device-width, initial-scale=1.0">
-<title>جدولي — الدعم الفني | سراب غيم</title>
-<link rel="preconnect" href="https://fonts.googleapis.com">
-<link href="https://fonts.googleapis.com/css2?family=IBM+Plex+Sans+Arabic:wght@300;400;500;600&display=swap" rel="stylesheet">
+<title>جدولي — Jadwali Support</title>
+<link href="https://fonts.googleapis.com/css2?family=IBM+Plex+Sans+Arabic:wght@300;400;500;600&family=IBM+Plex+Sans:wght@300;400;500;600&display=swap" rel="stylesheet">
 <style>
-  *, *::before, *::after { box-sizing: border-box; margin: 0; padding: 0; }
-
-  :root {
-    --green: #2D6A4F;
-    --green-light: #52B788;
-    --green-pale: #D8F3DC;
-    --gold: #E9C46A;
-    --dark: #1B1B1B;
-    --gray: #6B7280;
-    --bg: #FAFAF8;
-    --white: #FFFFFF;
-    --radius: 16px;
-  }
-
-  body {
-    font-family: 'IBM Plex Sans Arabic', sans-serif;
-    background: var(--bg);
-    color: var(--dark);
-    min-height: 100vh;
-    direction: rtl;
-  }
-
-  /* ── Header ── */
-  header {
-    background: var(--green);
-    padding: 48px 24px 40px;
-    text-align: center;
-    position: relative;
-    overflow: hidden;
-  }
-  header::before {
-    content: '';
-    position: absolute;
-    top: -60px; left: -60px;
-    width: 240px; height: 240px;
-    background: rgba(255,255,255,0.05);
-    border-radius: 50%;
-  }
-  header::after {
-    content: '';
-    position: absolute;
-    bottom: -80px; right: -40px;
-    width: 300px; height: 300px;
-    background: rgba(255,255,255,0.04);
-    border-radius: 50%;
-  }
-
-  .app-icon {
-    width: 88px; height: 88px;
-    background: var(--white);
-    border-radius: 22px;
-    display: flex; align-items: center; justify-content: center;
-    margin: 0 auto 20px;
-    font-size: 44px;
-    box-shadow: 0 8px 32px rgba(0,0,0,0.18);
-    position: relative; z-index: 1;
-  }
-
-  header h1 {
-    font-size: 32px;
-    font-weight: 600;
-    color: var(--white);
-    letter-spacing: -0.5px;
-    position: relative; z-index: 1;
-  }
-
-  header p {
-    font-size: 15px;
-    color: rgba(255,255,255,0.72);
-    margin-top: 6px;
-    font-weight: 300;
-    position: relative; z-index: 1;
-  }
-
-  .badge {
-    display: inline-block;
-    margin-top: 14px;
-    background: rgba(255,255,255,0.15);
-    color: var(--white);
-    font-size: 12px;
-    padding: 5px 14px;
-    border-radius: 99px;
-    letter-spacing: 0.3px;
-    position: relative; z-index: 1;
-  }
-
-  /* ── Main ── */
-  main {
-    max-width: 600px;
-    margin: 0 auto;
-    padding: 32px 20px 64px;
-  }
-
-  /* ── Contact Card ── */
-  .contact-card {
-    background: var(--white);
-    border-radius: var(--radius);
-    overflow: hidden;
-    box-shadow: 0 2px 16px rgba(0,0,0,0.06);
-    margin-bottom: 20px;
-  }
-
-  .contact-card-header {
-    background: var(--green-pale);
-    padding: 16px 20px;
-    font-size: 13px;
-    font-weight: 500;
-    color: var(--green);
-    letter-spacing: 0.2px;
-  }
-
-  .contact-item {
-    display: flex;
-    align-items: center;
-    gap: 14px;
-    padding: 18px 20px;
-    border-bottom: 1px solid #F0F0EE;
-    text-decoration: none;
-    color: var(--dark);
-    transition: background 0.15s;
-  }
-  .contact-item:last-child { border-bottom: none; }
-  .contact-item:hover { background: #F7F7F5; }
-
-  .contact-icon {
-    width: 44px; height: 44px;
-    border-radius: 12px;
-    display: flex; align-items: center; justify-content: center;
-    font-size: 20px;
-    flex-shrink: 0;
-  }
-  .icon-wa  { background: #E8F9EF; }
-  .icon-mail { background: #EEF2FF; }
-
-  .contact-text strong {
-    display: block;
-    font-size: 15px;
-    font-weight: 500;
-    margin-bottom: 2px;
-  }
-  .contact-text span {
-    font-size: 13px;
-    color: var(--gray);
-    font-weight: 300;
-  }
-
-  .contact-arrow {
-    margin-right: auto;
-    margin-left: 0;
-    color: var(--gray);
-    font-size: 18px;
-    transform: scaleX(-1);
-  }
-
-  /* ── Info Cards ── */
-  .info-grid {
-    display: grid;
-    grid-template-columns: 1fr 1fr;
-    gap: 12px;
-    margin-bottom: 20px;
-  }
-
-  .info-card {
-    background: var(--white);
-    border-radius: var(--radius);
-    padding: 18px;
-    box-shadow: 0 2px 16px rgba(0,0,0,0.05);
-    text-align: center;
-  }
-
-  .info-card .info-icon { font-size: 28px; margin-bottom: 8px; }
-  .info-card h3 { font-size: 13px; font-weight: 500; margin-bottom: 4px; }
-  .info-card p { font-size: 12px; color: var(--gray); line-height: 1.5; font-weight: 300; }
-
-  /* ── FAQ ── */
-  .faq-card {
-    background: var(--white);
-    border-radius: var(--radius);
-    overflow: hidden;
-    box-shadow: 0 2px 16px rgba(0,0,0,0.06);
-    margin-bottom: 20px;
-  }
-
-  .faq-header {
-    background: var(--green-pale);
-    padding: 16px 20px;
-    font-size: 13px;
-    font-weight: 500;
-    color: var(--green);
-  }
-
-  .faq-item {
-    padding: 16px 20px;
-    border-bottom: 1px solid #F0F0EE;
-  }
-  .faq-item:last-child { border-bottom: none; }
-
-  .faq-q {
-    font-size: 14px;
-    font-weight: 500;
-    margin-bottom: 6px;
-    display: flex;
-    align-items: flex-start;
-    gap: 8px;
-  }
-  .faq-q::before {
-    content: 'س';
-    background: var(--green);
-    color: white;
-    font-size: 11px;
-    width: 20px; height: 20px;
-    border-radius: 6px;
-    display: flex; align-items: center; justify-content: center;
-    flex-shrink: 0;
-    margin-top: 1px;
-  }
-
-  .faq-a {
-    font-size: 13px;
-    color: var(--gray);
-    line-height: 1.65;
-    padding-right: 28px;
-    font-weight: 300;
-  }
-
-  /* ── Footer ── */
-  footer {
-    text-align: center;
-    padding: 24px;
-    font-size: 12px;
-    color: var(--gray);
-    font-weight: 300;
-  }
-
-  footer strong { color: var(--dark); font-weight: 500; }
-
-  /* ── Responsive ── */
-  @media (max-width: 400px) {
-    .info-grid { grid-template-columns: 1fr; }
-    header h1 { font-size: 26px; }
-  }
+*,*::before,*::after{box-sizing:border-box;margin:0;padding:0}
+:root{--green:#2D6A4F;--green-pale:#D8F3DC;--dark:#1B1B1B;--gray:#6B7280;--light-gray:#F0F0EE;--bg:#FAFAF8;--white:#FFFFFF;--radius:16px}
+body{background:var(--bg);color:var(--dark)}
+body.ar{font-family:'IBM Plex Sans Arabic',sans-serif;direction:rtl}
+body.en{font-family:'IBM Plex Sans',sans-serif;direction:ltr}
+.topbar{background:var(--white);border-bottom:1px solid var(--light-gray);display:flex;align-items:center;justify-content:space-between;padding:10px 20px;position:sticky;top:0;z-index:200}
+.topbar-logo{font-size:14px;font-weight:600;color:var(--green)}
+.lang-toggle{display:flex;gap:4px;background:var(--bg);border:1px solid var(--light-gray);border-radius:99px;padding:3px}
+.lang-btn{font-size:12px;font-weight:500;padding:4px 12px;border-radius:99px;border:none;background:none;cursor:pointer;color:var(--gray);transition:all .15s}
+.lang-btn.active{background:var(--green);color:var(--white)}
+header{background:var(--green);padding:40px 24px 36px;text-align:center;position:relative;overflow:hidden}
+header::before{content:'';position:absolute;top:-60px;left:-60px;width:240px;height:240px;background:rgba(255,255,255,0.05);border-radius:50%}
+header::after{content:'';position:absolute;bottom:-80px;right:-40px;width:300px;height:300px;background:rgba(255,255,255,0.04);border-radius:50%}
+.app-icon{width:80px;height:80px;background:var(--white);border-radius:20px;display:flex;align-items:center;justify-content:center;margin:0 auto 16px;font-size:40px;box-shadow:0 8px 32px rgba(0,0,0,0.18);position:relative;z-index:1}
+header h1{font-size:28px;font-weight:600;color:var(--white);position:relative;z-index:1}
+.header-sub{font-size:14px;color:rgba(255,255,255,0.72);margin-top:5px;font-weight:300;position:relative;z-index:1}
+.badge{display:inline-block;margin-top:12px;background:rgba(255,255,255,0.15);color:var(--white);font-size:11px;padding:4px 12px;border-radius:99px;position:relative;z-index:1}
+nav{background:var(--white);border-bottom:1px solid var(--light-gray);display:flex;position:sticky;top:45px;z-index:100}
+.nav-btn{flex:1;padding:13px 8px;font-family:inherit;font-size:13px;font-weight:500;background:none;border:none;border-bottom:2px solid transparent;color:var(--gray);cursor:pointer;transition:all .15s}
+.nav-btn.active{color:var(--green);border-bottom-color:var(--green)}
+.section{display:none;max-width:640px;margin:0 auto;padding:28px 20px 64px}
+.section.active{display:block}
+.card{background:var(--white);border-radius:var(--radius);overflow:hidden;box-shadow:0 2px 12px rgba(0,0,0,0.06);margin-bottom:16px}
+.card-header{background:var(--green-pale);padding:14px 20px;font-size:12px;font-weight:500;color:var(--green)}
+.contact-item{display:flex;align-items:center;gap:14px;padding:16px 20px;border-bottom:1px solid var(--light-gray);text-decoration:none;color:var(--dark);transition:background .15s}
+.contact-item:last-child{border-bottom:none}
+.contact-item:hover{background:#F7F7F5}
+.ci-icon{width:42px;height:42px;border-radius:11px;display:flex;align-items:center;justify-content:center;font-size:18px;flex-shrink:0}
+.icon-wa{background:#E8F9EF}.icon-mail{background:#EEF2FF}
+.ci-text strong{display:block;font-size:14px;font-weight:500;margin-bottom:1px}
+.ci-text span{font-size:12px;color:var(--gray);font-weight:300}
+.ci-arrow{color:var(--gray);font-size:16px}
+body.ar .ci-arrow{margin-right:auto;transform:scaleX(-1)}
+body.en .ci-arrow{margin-left:auto;transform:none}
+.info-grid{display:grid;grid-template-columns:1fr 1fr;gap:10px;margin-bottom:16px}
+.info-card{background:var(--white);border-radius:var(--radius);padding:16px;box-shadow:0 2px 12px rgba(0,0,0,0.05);text-align:center}
+.info-card .ic-icon{font-size:26px;margin-bottom:6px}
+.info-card h3{font-size:12px;font-weight:500;margin-bottom:3px}
+.info-card p{font-size:11px;color:var(--gray);line-height:1.5;font-weight:300}
+.faq-item{padding:14px 20px;border-bottom:1px solid var(--light-gray)}
+.faq-item:last-child{border-bottom:none}
+.faq-q{font-size:13px;font-weight:500;margin-bottom:5px;display:flex;align-items:flex-start;gap:8px}
+.faq-q::before{background:var(--green);color:white;font-size:10px;width:18px;height:18px;border-radius:5px;display:flex;align-items:center;justify-content:center;flex-shrink:0;margin-top:1px}
+body.ar .faq-q::before{content:'س'}
+body.en .faq-q::before{content:'Q'}
+.faq-a{font-size:12px;color:var(--gray);line-height:1.65;font-weight:300}
+body.ar .faq-a{padding-right:26px}
+body.en .faq-a{padding-left:26px}
+.pp-section{background:var(--white);border-radius:var(--radius);padding:20px;box-shadow:0 2px 12px rgba(0,0,0,0.06);margin-bottom:14px}
+.pp-section h2{font-size:15px;font-weight:500;color:var(--dark);margin-bottom:10px;padding-bottom:8px;border-bottom:1px solid var(--light-gray);display:flex;align-items:center;gap:8px}
+.pp-section p,.pp-section li{font-size:13px;color:var(--gray);line-height:1.8;font-weight:300}
+body.ar .pp-section ul{padding-right:20px}
+body.en .pp-section ul{padding-left:20px}
+.pp-section ul{margin-top:6px}
+.pp-section li{margin-bottom:4px}
+.pp-section strong{color:var(--dark);font-weight:500}
+.pp-highlight{background:var(--green-pale);border-radius:10px;padding:12px 16px;margin-top:10px}
+.pp-highlight p{color:#1B4332;font-size:12px;font-weight:400}
+.pp-date{font-size:11px;color:var(--gray);text-align:center;margin-top:8px}
+footer{text-align:center;padding:20px;font-size:11px;color:var(--gray)}
+footer strong{color:var(--dark);font-weight:500}
+@media(max-width:400px){.info-grid{grid-template-columns:1fr}header h1{font-size:24px}}
+.t-ar{display:none}.t-en{display:none}
+body.ar .t-ar{display:block}body.en .t-en{display:block}
+span.t-ar{display:none}span.t-en{display:none}
+body.ar span.t-ar{display:inline}body.en span.t-en{display:inline}
 </style>
 </head>
-<body>
+<body class="en">
+
+<div class="topbar">
+  <div class="topbar-logo">🔢 <span class="t-ar">جدولي</span><span class="t-en">Jadwali</span></div>
+  <div class="lang-toggle">
+    <button class="lang-btn" id="btn-ar" onclick="setLang('ar')">العربية</button>
+    <button class="lang-btn active" id="btn-en" onclick="setLang('en')">English</button>
+  </div>
+</div>
 
 <header>
   <div class="app-icon">🔢</div>
-  <h1>جدولي</h1>
-  <p>تعلّم جداول الضرب بطريقة ممتعة</p>
-  <span class="badge">سراب غيم للتطبيقات</span>
+  <h1 class="t-ar">جدولي</h1><h1 class="t-en">Jadwali</h1>
+  <p class="header-sub t-ar">تعلّم جداول الضرب بطريقة ممتعة</p>
+  <p class="header-sub t-en">Learn multiplication tables the fun way</p>
+  <span class="badge t-ar">سراب غيم للتطبيقات</span>
+  <span class="badge t-en">Sarab Ghaym Apps</span>
 </header>
 
-<main>
+<nav>
+  <button class="nav-btn active" onclick="showTab('support', this)">
+    <span class="t-ar">الدعم الفني</span><span class="t-en">Support</span>
+  </button>
+  <button class="nav-btn" onclick="showTab('privacy', this)">
+    <span class="t-ar">سياسة الخصوصية</span><span class="t-en">Privacy Policy</span>
+  </button>
+</nav>
 
-  <!-- Contact -->
-  <div class="contact-card">
-    <div class="contact-card-header">📬 تواصل معنا</div>
-
+<!-- SUPPORT -->
+<div id="tab-support" class="section active">
+  <div class="card">
+    <div class="card-header">
+      <span class="t-ar">📬 تواصل معنا</span><span class="t-en">📬 Contact Us</span>
+    </div>
     <a class="contact-item" href="https://wa.me/966500000000" target="_blank">
-      <div class="contact-icon icon-wa">💬</div>
-      <div class="contact-text">
-        <strong>واتساب</strong>
-        <span>ردّ خلال ساعات — الأسرع</span>
+      <div class="ci-icon icon-wa">💬</div>
+      <div class="ci-text">
+        <strong>WhatsApp</strong>
+        <span class="t-ar">ردّ خلال ساعات — الأسرع</span>
+        <span class="t-en">Reply within hours — fastest</span>
       </div>
-      <span class="contact-arrow">›</span>
+      <span class="ci-arrow">›</span>
     </a>
-
     <a class="contact-item" href="mailto:support@sarabghaym.com">
-      <div class="contact-icon icon-mail">✉️</div>
-      <div class="contact-text">
-        <strong>البريد الإلكتروني</strong>
-        <span>support@sarabghaym.com</span>
+      <div class="ci-icon icon-mail">✉️</div>
+      <div class="ci-text">
+        <strong>support@sarabghaym.com</strong>
+        <span class="t-ar">البريد الإلكتروني</span>
+        <span class="t-en">Email support</span>
       </div>
-      <span class="contact-arrow">›</span>
+      <span class="ci-arrow">›</span>
     </a>
   </div>
 
-  <!-- Info -->
   <div class="info-grid">
     <div class="info-card">
-      <div class="info-icon">📱</div>
-      <h3>الإصدار الحالي</h3>
-      <p>النسخة 1.0<br>iOS 17 فأعلى</p>
+      <div class="ic-icon">📱</div>
+      <h3 class="t-ar">الإصدار الحالي</h3><h3 class="t-en">Version</h3>
+      <p class="t-ar">النسخة 1.0<br>iOS 17 فأعلى</p>
+      <p class="t-en">Version 1.0<br>iOS 17 or later</p>
     </div>
     <div class="info-card">
-      <div class="info-icon">⏱️</div>
-      <h3>وقت الرد</h3>
-      <p>خلال 24 ساعة<br>أيام الأسبوع</p>
+      <div class="ic-icon">⏱️</div>
+      <h3 class="t-ar">وقت الرد</h3><h3 class="t-en">Response Time</h3>
+      <p class="t-ar">خلال 24 ساعة<br>أيام الأسبوع</p>
+      <p class="t-en">Within 24 hours<br>Weekdays</p>
     </div>
     <div class="info-card">
-      <div class="info-icon">📲</div>
-      <h3>الأجهزة</h3>
-      <p>iPhone و iPad<br>ج
+      <div class="ic-icon">📲</div>
+      <h3 class="t-ar">الأجهزة</h3><h3 class="t-en">Devices</h3>
+      <p class="t-ar">iPhone و iPad<br>جميع الأحجام</p>
+      <p class="t-en">iPhone & iPad<br>All sizes</p>
+    </div>
+    <div class="info-card">
+      <div class="ic-icon">🌐</div>
+      <h3 class="t-ar">يعمل</h3><h3 class="t-en">Works</h3>
+      <p class="t-ar">بدون إنترنت<br>بالكامل</p>
+      <p class="t-en">Fully offline<br>No internet needed</p>
+    </div>
+  </div>
+
+  <div class="card">
+    <div class="card-header">
+      <span class="t-ar">❓ أسئلة شائعة</span><span class="t-en">❓ FAQ</span>
+    </div>
+    <div class="faq-item">
+      <div class="faq-q">
+        <span class="t-ar">كيف أستعيد مشترياتي؟</span>
+        <span class="t-en">How do I restore my purchases?</span>
+      </div>
+      <div class="faq-a">
+        <span class="t-ar">افتح التطبيق ← الإعدادات ← استعادة المشتريات. تأكد إنك مسجل بنفس Apple ID.</span>
+        <span class="t-en">Open the app → Settings → Restore Purchases. Make sure you're signed in with the same Apple ID.</span>
+      </div>
+    </div>
+    <div class="faq-item">
+      <div class="faq-q">
+        <span class="t-ar">هل التطبيق يحتاج إنترنت؟</span>
+        <span class="t-en">Does the app require internet?</span>
+      </div>
+      <div class="faq-a">
+        <span class="t-ar">لا، يعمل بالكامل بدون إنترنت بعد التحميل.</span>
+        <span class="t-en">No, the app works fully offline after the initial download.</span>
+      </div>
+    </div>
+    <div class="faq-item">
+      <div class="faq-q">
+        <span class="t-ar">ما يشتغل على جهازي؟</span>
+        <span class="t-en">The app doesn't work on my device?</span>
+      </div>
+      <div class="faq-a">
+        <span class="t-ar">التطبيق يتطلب iOS 17 أو أحدث على iPhone أو iPad.</span>
+        <span class="t-en">The app requires iOS 17 or later on iPhone or iPad.</span>
+      </div>
+    </div>
+    <div class="faq-item">
+      <div class="faq-q">
+        <span class="t-ar">كيف أبلّغ عن مشكلة؟</span>
+        <span class="t-en">How do I report a bug?</span>
+      </div>
+      <div class="faq-a">
+        <span class="t-ar">تواصل معنا عبر واتساب أو البريد مع وصف المشكلة وإصدار iOS لديك.</span>
+        <span class="t-en">Contact us via WhatsApp or email with a description of the issue and your iOS version.</span>
+      </div>
+    </div>
+  </div>
+
+  <footer>
+    <strong>Sarab Ghaym</strong> —
+    <span class="t-ar">جميع الحقوق محفوظة</span>
+    <span class="t-en">All rights reserved</span>
+    © 2025
+  </footer>
+</div>
+
+<!-- PRIVACY -->
+<div id="tab-privacy" class="section">
+
+  <div class="pp-section">
+    <h2><span>📋</span> <span class="t-ar">مقدمة</span><span class="t-en">Introduction</span></h2>
+    <p class="t-ar">تطبيق <strong>جدولي</strong> مملوك لشركة <strong>سراب غيم للتطبيقات</strong>. نحن نحترم خصوصيتك ونلتزم بحماية بياناتك.</p>
+    <p class="t-en"><strong>Jadwali</strong> is owned and operated by <strong>Sarab Ghaym</strong>. We respect your privacy and are committed to protecting your data.</p>
+    <div class="pp-highlight">
+      <p class="t-ar">✅ باختصار: التطبيق لا يجمع أي بيانات شخصية ولا يرسلها لأي خادم. كل البيانات تُخزَّن محلياً على جهازك فقط.</p>
+      <p class="t-en">✅ In short: The app does not collect any personal data and does not send anything to any server. All data is stored locally on your device only.</p>
+    </div>
+  </div>
+
+  <div class="pp-section">
+    <h2><span>📦</span> <span class="t-ar">البيانات التي نجمعها</span><span class="t-en">Data We Collect</span></h2>
+    <p class="t-ar">التطبيق <strong>لا يجمع</strong> أياً من التالي:</p>
+    <p class="t-en">The app does <strong>not collect</strong> any of the following:</p>
+    <ul>
+      <li><span class="t-ar">الاسم أو البريد الإلكتروني أو أي معلومات شخصية</span><span class="t-en">Name, email, or any personal information</span></li>
+      <li><span class="t-ar">الموقع الجغرافي</span><span class="t-en">Location data</span></li>
+      <li><span class="t-ar">بيانات الجهاز أو المعرّفات الفريدة</span><span class="t-en">Device data or unique identifiers</span></li>
+      <li><span class="t-ar">بيانات الاستخدام أو التحليلات</span><span class="t-en">Usage data or analytics</span></li>
+      <li><span class="t-ar">أي بيانات تُرسَل لخوادم خارجية</span><span class="t-en">Any data sent to external servers</span></li>
+    </ul>
+    <p style="margin-top:10px">
+      <span class="t-ar">البيانات الوحيدة المُخزَّنة هي <strong>تقدمك داخل التطبيق</strong> وتُحفظ محلياً على جهازك فقط.</span>
+      <span class="t-en">The only data stored is your <strong>in-app progress</strong>, saved locally on your device only.</span>
+    </p>
+  </div>
+
+  <div class="pp-section">
+    <h2><span>💳</span> <span class="t-ar">المشتريات داخل التطبيق</span><span class="t-en">In-App Purchases</span></h2>
+    <p class="t-ar">تُعالَج جميع عمليات الشراء من خلال <strong>Apple App Store</strong> مباشرةً. نحن لا نرى أو نخزّن أي بيانات دفع. تطبّق Apple سياسة الخصوصية الخاصة بها.</p>
+    <p class="t-en">All purchases are processed through the <strong>Apple App Store</strong>. We never see or store any payment information. Apple's own privacy policy applies to all transactions.</p>
+  </div>
+
+  <div class="pp-section">
+    <h2><span>👶</span> <span class="t-ar">خصوصية الأطفال</span><span class="t-en">Children's Privacy</span></h2>
+    <p class="t-ar">التطبيق مصمّم للأطفال من عمر ٦ إلى ١٢ سنة. نحن ملتزمون بـ <strong>عدم جمع أي بيانات</strong>. لا يوجد حساب مستخدم ولا تسجيل دخول.</p>
+    <p class="t-en">This app is designed for children aged 6–12. We are committed to <strong>not collecting any data</strong>. There is no user account and no login required.</p>
+  </div>
+
+  <div class="pp-section">
+    <h2><span>✏️</span> <span class="t-ar">تحديثات السياسة</span><span class="t-en">Policy Updates</span></h2>
+    <p class="t-ar">قد نُحدّث هذه السياسة عند إضافة ميزات جديدة. سيُشار دائماً إلى تاريخ آخر تحديث.</p>
+    <p class="t-en">We may update this policy when new features are added. The date of the last update will always be noted below.</p>
+  </div>
+
+  <div class="pp-section">
+    <h2><span>📬</span> <span class="t-ar">تواصل معنا</span><span class="t-en">Contact Us</span></h2>
+    <ul style="margin-top:4px">
+      <li><strong>Email:</strong> support@sarabghaym.com</li>
+      <li><span class="t-ar"><strong>الشركة:</strong> سراب غيم للتطبيقات — المملكة العربية السعودية</span><span class="t-en"><strong>Company:</strong> Sarab Ghaym — Saudi Arabia</span></li>
+    </ul>
+  </div>
+
+  <p class="pp-date">
+    <span class="t-ar">آخر تحديث: مارس ٢٠٢٥</span>
+    <span class="t-en">Last updated: March 2025</span>
+  </p>
+
+  <footer>
+    <strong>Sarab Ghaym</strong> —
+    <span class="t-ar">جميع الحقوق محفوظة</span>
+    <span class="t-en">All rights reserved</span>
+    © 2025
+  </footer>
+</div>
+
+<script>
+function showTab(tab, btn) {
+  document.querySelectorAll('.section').forEach(s => s.classList.remove('active'));
+  document.querySelectorAll('nav .nav-btn').forEach(b => b.classList.remove('active'));
+  document.getElementById('tab-' + tab).classList.add('active');
+  btn.classList.add('active');
+}
+function setLang(lang) {
+  document.body.className = lang;
+  document.body.setAttribute('lang', lang);
+  document.body.setAttribute('dir', lang === 'ar' ? 'rtl' : 'ltr');
+  document.getElementById('btn-ar').classList.toggle('active', lang === 'ar');
+  document.getElementById('btn-en').classList.toggle('active', lang === 'en');
+}
+</script>
+</body>
+</html>
